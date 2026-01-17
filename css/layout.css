@@ -82,3 +82,25 @@ footer {
 footer p {
     margin: 0;
 }
+/* Header thanh mảnh - Dùng cho mọi trang */
+.header .logo {
+    font-size: 1.5rem; 
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.nav ul li a {
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Tiêu đề trang chung */
+.page-title {
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    margin-bottom: 15px;
+    text-align: center; /* Đảm bảo luôn căn giữa */
+}
