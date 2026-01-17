@@ -29,7 +29,7 @@ const products = [
         name: "Bột Đánh Răng Thảo Mộc (10g)",
         price: "Tặng kèm",
         category: "care",
-        img: "images/Kemdanhrang.png",
+        img: "images/kemdanhrang.png",
         desc: "Bột đánh răng thảo mộc được làm từ lá và rễ cây rừng, giúp làm sạch răng miệng tự nhiên. Sản phẩm hỗ trợ giảm mùi hôi miệng và chăm sóc nướu răng nhẹ dịu."
     },
     {
