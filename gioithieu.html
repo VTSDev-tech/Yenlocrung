@@ -4,8 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Giới thiệu - Yến Lộc Rừng</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/gallery.css">
+    <link rel="stylesheet" href="css/philosophy.css">
+    <link rel="stylesheet" href="css/brand-story.css">
+    <link rel="stylesheet" href="css/certifications.css">
+    <link rel="stylesheet" href="css/responsive.css">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/carousel.css">
+    <link rel="stylesheet" href="css/intro-hero.css">
 </head>
 <body>
     <header class="header">
@@ -26,24 +34,35 @@
     <div class="container">
         <h1 class="page-title">Giới thiệu</h1>
 
-        <section class="brand-story">
-            <h2>Câu chuyện thương hiệu</h2>
-            <h3>Yến Lộc Rừng – từ thiên nhiên đến sức khỏe</h3>
-            <p>Yến Lộc Rừng là hộ kinh doanh gia đình tại Thanh Sơn, Đồng Nai. Chúng tôi lựa chọn con đường chậm và bền: tìm nguyên liệu sạch, làm thủ công ở quy mô vừa phải, đặt sự an toàn và niềm tin của người dùng lên hàng đầu.</p>
-            <p><strong>Mỗi sản phẩm không chỉ là hàng hóa, mà là tâm huyết với sức khỏe cộng đồng.</strong></p>
+        <!-- Hero Section -->
+        <section class="intro-hero">
+            <div class="intro-hero-tag">Yến Lộc Rừng</div>
+            <div class="intro-hero-content">
+                <div class="intro-hero-left">
+                    <h1>Sống Khỏe Là Mừng<br>Tự Nhiên Là Gốc</h1>
+                    <p>Yến Lộc Rừng là hộ kinh doanh gia đình tại Thanh Sơn, Đồng Nai. Chúng tôi lựa chọn con đường chậm và bền: tìm nguyên liệu sạch, làm thủ công ở quy mô vừa phải.</p>
+                    <a href="sanpham.html" class="btn-primary">Xem Sản Phẩm</a>
+                </div>
+                <div class="intro-hero-right">
+                    <img src="images/chiyen2.jpg" alt="Yến Lộc Rừng">
+                </div>
+            </div>
         </section>
 
-        <!-- 8 tấm hình của chị Yến (thay bằng ảnh thật) -->
-        <div class="gallery">
-            <img src="images/chiyen1.jpg" alt="Chị Yến 1">
-            <img src="images/chiyen2.jpg" alt="Chị Yến 2">
-            <img src="images/chiyen3.jpg" alt="Chị Yến 3">
-            <img src="images/chiyen4.jpg" alt="Chị Yến 4">
-            <img src="images/chiyen5.jpg" alt="Chị Yến 5">
-            <img src="images/chiyen6.jpg" alt="Chị Yến 6">
-            <img src="images/chiyen7.jpg" alt="Chị Yến 7">
-            <img src="images/chiyen8.jpg" alt="Chị Yến 8">
-        </div>
+            <div class="gallery-carousel-grid">
+                <div class="carousel-grid-container">
+                    <div class="carousel-grid-slide" style="background-image: url('images/chiyen1.jpg')"></div>
+                    <div class="carousel-grid-slide" style="background-image: url('images/chiyen6.jpg')"></div>
+                    <div class="carousel-grid-slide" style="background-image: url('images/chiyen3.jpg')"></div>
+                    <div class="carousel-grid-slide" style="background-image: url('images/chiyen4.jpg')"></div>
+                </div>
+            </div>
+
+            <div class="carousel-nav">
+                <button class="carousel-nav-btn" onclick="galleryPrev()">❮</button>
+                <button class="carousel-nav-btn" onclick="galleryNext()">❯</button>
+            </div>
+        </section>
 
         <section class="philosophy">
             <h2>Triết lý sản phẩm</h2>
@@ -66,5 +85,41 @@
             <p>© 2024 Yến Lộc Rừng. Tất cả quyền được bảo lưu.</p>
         </div>
     </footer>
+
+    <script>
+        let galleryIndex = 0;
+
+        function galleryNext() {
+            galleryIndex++;
+            updateGallery();
+        }
+
+        function galleryPrev() {
+            galleryIndex--;
+            updateGallery();
+        }
+
+        function updateGallery() {
+            const container = document.querySelector('.carousel-grid-container');
+            const slides = [
+                'images/chiyen1.jpg',
+                'images/chiyen2.jpg',
+                'images/chiyen3.jpg',
+                'images/chiyen4.jpg',
+                'images/chiyen5.jpg',
+                'images/chiyen6.jpg'
+            ];
+            
+            const totalSlides = slides.length - 3;
+            if (galleryIndex > totalSlides) galleryIndex = 0;
+            if (galleryIndex < 0) galleryIndex = totalSlides;
+
+            const gridSlides = document.querySelectorAll('.carousel-grid-slide');
+            for (let i = 0; i < 4; i++) {
+                const idx = (galleryIndex + i) % slides.length;
+                gridSlides[i].style.backgroundImage = `url('${slides[idx]}')`;
+            }
+        }
+    </script>
 </body>
 </html>

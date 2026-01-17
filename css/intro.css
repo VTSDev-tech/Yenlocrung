@@ -1,0 +1,153 @@
+/* ==================== INTRO ==================== */
+.intro {
+    padding: 120px 0;
+    background-color: #f5f9f3;
+    background-image: 
+        /* Lớp 1: Chấm chấm xanh lá */
+        radial-gradient(circle, rgba(45, 90, 39, 0.15) 5px, transparent 5px),
+        /* Lớp 2: Chấm chấm vàng nâu */
+        radial-gradient(circle, rgba(212, 163, 115, 0.18) 4px, transparent 4px),
+        /* Lớp 3: Chấm chấm xanh nhạt */
+        radial-gradient(circle, rgba(148, 189, 128, 0.12) 3px, transparent 3px),
+        /* Lớp 4: Sóng mềm xanh */
+        radial-gradient(ellipse 200% 100% at 20% 50%, rgba(232, 240, 228, 0.4) 0%, transparent 50%),
+        /* Lớp 5: Sóng mềm vàng */
+        radial-gradient(ellipse 150% 150% at 80% 30%, rgba(212, 163, 115, 0.15) 0%, transparent 50%),
+        /* Lớp 6: Sóng mềm xanh sẫm */
+        radial-gradient(ellipse 180% 120% at 10% 80%, rgba(45, 90, 39, 0.08) 0%, transparent 40%),
+        /* Lớp 7: Gradient chính */
+        linear-gradient(135deg, #f5f9f3 0%, rgba(232, 240, 228, 0.5) 50%, rgba(212, 163, 115, 0.1) 100%);
+    background-size: 
+        220px 240px,
+        180px 200px,
+        250px 280px,
+        400px 300px,
+        350px 400px,
+        450px 350px,
+        100% 100%;
+    background-position: 
+        0 0,
+        40px 50px,
+        20px 80px,
+        0 0,
+        50% 50%,
+        30% 70%,
+        0 0;
+    background-attachment: fixed;
+    position: relative;
+    animation: subtleShift 20s ease-in-out infinite;
+}
+
+.intro-grid {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 992px) {
+    .intro {
+        padding: 80px 0;
+    }
+    .intro-grid {
+        gap: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .intro {
+        padding: 60px 0;
+    }
+    .intro-grid {
+        flex-direction: column;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 640px) {
+    .intro {
+        padding: 40px 0;
+    }
+}
+
+.intro-image {
+    flex: 1;
+    border-radius: 20px;
+    overflow: visible;
+    position: relative;
+    box-shadow: 0 30px 60px rgba(45, 90, 39, 0.2);
+}
+
+.intro-image::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    background: 
+        radial-gradient(circle at 30% 30%, rgba(212, 163, 115, 0.25) 0%, transparent 35%),
+        radial-gradient(circle at 70% 70%, rgba(45, 90, 39, 0.15) 0%, transparent 35%);
+    border-radius: 20px;
+    z-index: -1;
+    animation: floatingGlow 5s ease-in-out infinite;
+}
+
+@media (max-width: 768px) {
+    .intro-image::before {
+        top: -15px;
+        left: -15px;
+        right: -15px;
+        bottom: -15px;
+    }
+}
+
+.intro-image::after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border: 2px dashed rgba(45, 90, 39, 0.15);
+    border-radius: 20px;
+    z-index: -1;
+}
+
+.intro-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    display: block;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+    animation: floatingImage 4s ease-in-out infinite;
+    position: relative;
+}
+
+.intro-text {
+    flex: 1;
+}
+
+.intro-text h2 {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+}
+
+@media (max-width: 992px) {
+    .intro-text h2 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .intro-text h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .intro-text h2 {
+        font-size: 1.6rem;
+    }
+}

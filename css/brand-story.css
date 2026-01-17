@@ -1,0 +1,74 @@
+/* ==================== BRAND STORY ==================== */
+.brand-story {
+    margin-bottom: 60px;
+    background: linear-gradient(135deg, #ffffff 0%, rgba(232, 240, 228, 0.5) 100%);
+    padding: 60px;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 20px 60px rgba(45, 90, 39, 0.12);
+    border-left: 5px solid var(--primary-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.brand-story::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(212, 163, 115, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.brand-story h2 {
+    color: var(--primary-color);
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 1;
+}
+
+.brand-story h3 {
+    color: var(--accent-color);
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    font-weight: 600;
+    position: relative;
+    z-index: 1;
+}
+
+.brand-story p {
+    color: var(--text-light);
+    line-height: 1.9;
+    font-size: 1rem;
+    margin-bottom: 18px;
+    text-align: justify;
+    position: relative;
+    z-index: 1;
+}
+
+.transparency {
+    background: white;
+    padding: 40px;
+    border-radius: var(--radius-lg);
+    border-left: 4px solid var(--accent-color);
+    margin-top: 40px;
+}
+
+.transparency h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.transparency p {
+    color: var(--text-light);
+    line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+    .brand-story {
+        padding: 25px;
+    }
+}

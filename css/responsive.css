@@ -1,0 +1,56 @@
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 992px) {
+    .intro-grid {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        gap: 25px;
+        font-size: 0.85rem;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    .page-title {
+        font-size: 2rem;
+    }
+
+    .featured-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 15px;
+    }
+
+    .commitment-grid,
+    .philosophy-grid,
+    .cert-detailed-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cert-feature-grid {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .swiper-button-next,
+    .swiper-button-prev {
+        width: 36px !important;
+        height: 36px !important;
+    }
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+        font-size: 0.9rem !important;
+    }
+}

@@ -1,0 +1,38 @@
+/* ==================== FEATURE PRODUCTS GRID ==================== */
+.feature-products-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.feature-product-link {
+    text-align: center;
+    padding: 20px;
+    background: white;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: block;
+    text-decoration: none;
+}
+
+.feature-product-link:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.feature-product-link img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: var(--radius);
+    margin-bottom: 15px;
+}
+
+.feature-product-link p {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin: 0;
+}

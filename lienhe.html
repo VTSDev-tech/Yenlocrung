@@ -4,7 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liên hệ - Yến Lộc Rừng</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/gallery.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- Swiper CSS (thêm vào để làm slider) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -28,28 +34,51 @@
     <div class="container">
         <h1 class="page-title">Liên hệ</h1>
 
+        <!-- Contact Section -->
         <section class="contact-info">
-            <!-- Hình chị Yến tham gia hội nghị (thay bằng ảnh thật của bạn) -->
-            <div class="contact-image">
-                <img src="images/chiyen-hoinghi.jpg" alt="Chị Yến tham gia hội nghị">
+            <!-- Slideshow ảnh chị Yến -->
+            <div class="contact-gallery swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="images/sk1.jpeg" alt="Chị Yến tham gia hội nghị 1">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/sk2.jpg" alt="Chị Yến tham gia hội nghị 2">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/sk3.jpg" alt="Chị Yến tham gia hội nghị 3">
+                    </div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
             </div>
 
+            <!-- Thông tin liên hệ -->
             <div class="contact-content">
                 <h2>YẾN LỘC RỪNG</h2>
                 <div class="contact-details">
-                    <p><strong>Địa chỉ:</strong> Tổ 7A, ấp 6, Thanh Sơn, Định Quán, Đồng Nai</p>
-                    <p><strong>Hotline:</strong> 0979 502 951 – 0386 794 386</p>
+                    <p class="contact-item">
+                        <span class="contact-icon">📍</span>
+                        <span class="contact-label">Địa chỉ:</span> 
+                        <span class="contact-value">Tổ 7A, ấp 6, Thanh Sơn, Định Quán, Đồng Nai</span>
+                    </p>
+                    <p class="contact-item">
+                        <span class="contact-icon">📞</span>
+                        <span class="contact-label">Hotline:</span> 
+                        <span class="contact-hotline"><span class="hotline-highlight">0979 502 951</span> – <span class="hotline-highlight">0386 794 586</span></span>
+                    </p>
                 </div>
 
                 <div class="contact-buttons">
-                    <a href="https://zalo.me/0979502951" class="btn-primary" target="_blank">Zalo</a>
-                    <a href="https://www.facebook.com/yenllocrung" class="btn-primary" target="_blank">Fanpage</a>
-                </div>
-
-                <!-- QR Fanpage (thay bằng ảnh QR thật của bạn) -->
-                <div class="qr-section">
-                    <img src="images/qr-fanpage.jpg" alt="QR Fanpage Yến Lộc Rừng" class="qr-code">
-                    <p>Quét mã QR để theo dõi Fanpage</p>
+                    <a href="https://zalo.me/0979502951" class="btn-contact zalo" target="_blank">
+                        <span class="btn-icon">💬</span>
+                        <span class="btn-text">Zalo</span>
+                    </a>
+                    <a href="#" class="btn-contact qr-fanpage">
+                        <span class="btn-icon"></span>
+                        <span class="btn-text">QR Fanpage</span>
+                    </a>
                 </div>
             </div>
         </section>
@@ -61,5 +90,35 @@
             <p>© 2024 Yến Lộc Rừng. Tất cả quyền được bảo lưu.</p>
         </div>
     </footer>
+
+    <!-- Swiper JS (thêm vào để slider hoạt động) -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Khởi tạo Swiper -->
+    <script>
+        const swiper = new Swiper('.contact-gallery', {
+            // Cấu hình slider
+            loop: true,                      // Lặp lại vô hạn
+            autoplay: {
+                delay: 3000,                 // Tự động lướt mỗi 3 giây
+                disableOnInteraction: false, // Vẫn auto lướt dù người dùng chạm
+            },
+            speed: 800,                      // Tốc độ chuyển slide (mượt)
+            slidesPerView: 1,                // Hiển thị 1 ảnh/lượt
+            spaceBetween: 0,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            effect: 'fade',                  // Hiệu ứng fade (mượt, chuyên nghiệp)
+            fadeEffect: {
+                crossFade: true
+            }
+        });
+    </script>
 </body>
 </html>
